@@ -42,9 +42,6 @@ ENV APP_HOME /var/www/html
 #change uid and gid of apache to docker user uid/gid
 RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
 
-#change the web_root to laravel /var/www/html/october folder
-RUN sed -i -e "s/html/html\/october/g" /etc/apache2/sites-enabled/000-default.conf
-
 #apache log to stdout stderr
 RUN echo "ErrorLog /dev/stderr" >> /etc/apache2/sites-enabled/000-default.conf
 RUN echo "TransferLog /dev/stdout" >> /etc/apache2/sites-enabled/000-default.conf

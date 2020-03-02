@@ -6,5 +6,5 @@ services:
     ports:
       - "8002:80"
     volumes:
-      - /Users/tom/wwwroot/testcms:/var/www/html
+      - ."/var/www/html"
     restart: always
